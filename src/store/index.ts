@@ -21,7 +21,7 @@ export type Store = Omit<VuexStore<State>, "getters" | "commit" | "dispatch"> & 
         options?: CommitOptions
     ): ReturnType<Mutations[K]>;
 } & {
-    commit<K extends keyof Actions>(
+    dispatch<K extends keyof Actions>(
         key: K,
         payload?: Parameters<Actions[K]>[1],
         options?: DispatchOptions

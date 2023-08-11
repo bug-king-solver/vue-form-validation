@@ -9,5 +9,5 @@ export type State = {
 
 export const state: State = {
     loading: false,
-    fields: [{ value: "ss" }, { value: "ssss" }],
+    fields: [],
 };

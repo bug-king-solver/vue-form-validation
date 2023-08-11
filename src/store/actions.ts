@@ -18,6 +18,7 @@ type ActionAugments = Omit<ActionContext<State, State>, 'commit'> & {
 export type Actions = {
     [ActionType.GetAllFields](context: ActionAugments): void;
     [ActionType.AddField](context: ActionAugments, field: InputField): void;
+    [ActionType.RemoveField](context: ActionAugments, id: number): void;
 }
 
 export const actions: ActionTree<State, State> & Actions = {
@@ -27,5 +28,8 @@ export const actions: ActionTree<State, State> & Actions = {
     },
     async [ActionType.AddField]({ commit }, field) {
         commit(MutationType.AddField, field)
-    }
+    },
+    async [ActionType.RemoveField]({ commit }, id) {
+        commit(MutationType.RemoveField, id)
+    },
 }

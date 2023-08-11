@@ -10,6 +10,7 @@ export enum MutationType {
 export type Mutations = {
     [MutationType.SetFields](state: State, fields: InputField[]): void;
     [MutationType.AddField](state: State, field: InputField): void;
+    [MutationType.RemoveField](state: State, id: number): void;
 }
 
 export const mutations: MutationTree<State> & Mutations = {
@@ -18,5 +19,8 @@ export const mutations: MutationTree<State> & Mutations = {
     },
     [MutationType.AddField](state, field) {
         state.fields.push(field);
+    },
+    [MutationType.RemoveField](state, id) {
+        state.fields.splice(id, 1);
     },
 }

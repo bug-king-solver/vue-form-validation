@@ -16,10 +16,10 @@ import { useStore } from '../store';
 import { ActionType } from '../store/actions';
 
 const { id } = defineProps<{
-    id: Number
+    id: number
 }>()
 const store = useStore()
-const remove = (id: Number) => {
+const remove = (id: number) => {
     store.dispatch(ActionType.RemoveField, id);
 }
-</script>../store/actionsd.../store/store
+</script>

@@ -9,8 +9,8 @@
                         Add
                     </button>
                 </div>
-                <div v-for="(field, index) in fields" :key="index">
-                    <InputItem />
+                <div v-for="(_, index) in fields" :key="index">
+                    <InputItem :id="index" />
                 </div>
                 <div class="flex justify-between mt-7">
                     <button type="button"

@@ -9,5 +9,3 @@ onMounted(() => store.dispatch(ActionType.GetAllFields))
 <template>
   <InputList />
 </template>
-
-
