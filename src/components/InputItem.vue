@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center">
+    <div class="flex justify-center mb-5">
         <div class="flex rounded-md shadow-sm w-full">
             <input type="text" id="hs-trailing-button-add-on" name="hs-trailing-button-add-on"
                 class="py-3 px-4 block w-full border-2 border-slate-900 rounded-l-md text-sm focus:z-10 focus:border-sky-500 focus:ring-blue-500">
