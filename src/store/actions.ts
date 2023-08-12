@@ -23,7 +23,7 @@ export type Actions = {
 
 export const actions: ActionTree<State, State> & Actions = {
     async [ActionType.GetAllFields]({ commit }) {
-        const fields = [{ value: "" }, { value: "" }];
+        const fields = [{ value: "ssdsds" }, { value: "sdssd" }];
         commit(MutationType.SetFields, fields);
     },
     async [ActionType.AddField]({ commit }, field) {

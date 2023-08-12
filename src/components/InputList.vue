@@ -10,7 +10,7 @@
                     </button>
                 </div>
                 <div v-for="(_, index) in fields" :key="index">
-                    <InputItem :id="index" />
+                    <InputItem :id="index" :remove="remove" />
                 </div>
                 <div class="flex justify-between mt-7">
                     <button type="button"
@@ -23,17 +23,20 @@
     </div>
 </template>
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useStore } from '../store';
-import { ActionType } from '../store/actions';
-import { InputField } from '../store/state';
+import { reactive } from 'vue';
 import InputItem from './InputItem.vue';
-const store = useStore();
-const fields = computed(() => store.state.fields);
-const add = () => {
-    const field: InputField = {
+const fields = reactive([
+    {
         value: ""
-    };
-    store.dispatch(ActionType.AddField, field);
+    },
+    {
+        value: ""
+    }
+])
+const add = () => {
+    fields.push({ value: "" });
+}
+const remove = (index: number) => {
+    fields.splice(index, 1);
 }
 </script>

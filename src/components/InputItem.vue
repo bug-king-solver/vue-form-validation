@@ -12,14 +12,9 @@
     </div>
 </template>
 <script setup lang="ts">
-import { useStore } from '../store';
-import { ActionType } from '../store/actions';
 
-const { id } = defineProps<{
-    id: number
+const { id, remove } = defineProps<{
+    id: number,
+    remove: (id: number) => void
 }>()
-const store = useStore()
-const remove = (id: number) => {
-    store.dispatch(ActionType.RemoveField, id);
-}
 </script>
